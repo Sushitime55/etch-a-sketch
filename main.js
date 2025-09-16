@@ -24,7 +24,16 @@ function removeChildElements(parent) {
 }
 
 function onHover(square) {
-  square.style.backgroundColor = "blue";
+  // reroll pure white
+  let randomRed = 255;
+  let randomGreen = 255;
+  let randomBlue = 255;
+  while (randomRed == 255 && randomGreen == 255 && randomBlue == 255) {
+    randomRed = getRandomRGBValue();
+    randomGreen = getRandomRGBValue();
+    randomBlue = getRandomRGBValue();
+  }
+  square.style.backgroundColor = "rgb(" + randomRed + ", " + randomGreen + ", " + randomBlue + ")";
 }
 
 function makeCustomGrid() {
@@ -49,6 +58,10 @@ function addMouseoverToSquares() {
   squares.forEach((square) => {
     square.addEventListener("mouseover", onHover.bind(event, square));
   });
+}
+
+function getRandomRGBValue() {
+  return Math.floor(Math.random() * 256);
 }
 
 const makeGridButton = document.querySelector("button.make-grid-button");
