@@ -1,12 +1,17 @@
-function makeGrid(squaresPerRow = 4) {
+function makeGrid(squaresPerColumn = 4) {
   const gridContainer = document.getElementById("grid-container");
   // remove existing elements, if any
   removeChildElements(gridContainer);
 
-  for (i = 0; i < squaresPerRow ** 2; i++) {
-    let square = document.createElement("div");
-    square.className = "square";
-    gridContainer.append(square);
+  for (i = 0; i < squaresPerColumn; i++) {
+    let column = document.createElement("div");
+    column.className = "column";
+    for (j = 0; j < squaresPerColumn; j++) {
+      let square = document.createElement("div");
+      square.className = "square";
+      column.appendChild(square);
+    }
+    gridContainer.appendChild(column);
   }
 
   addMouseoverToSquares();
@@ -23,8 +28,8 @@ function onHover(square) {
 }
 
 function makeCustomGrid() {
-  let squaresPerRow = prompt("How many squares would you like on each row? ex. 5 = 5x5 grid");
-  makeGrid(squaresPerRow);
+  let squaresPerColumn = prompt("How many squares would you like on each column? ex. 5 = 5x5 grid");
+  makeGrid(squaresPerColumn);
 }
 
 function addMouseoverToSquares() {

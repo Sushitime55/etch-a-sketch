@@ -17,12 +17,17 @@ body {
   height: 516px;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  /* we want the columns to span 100% the height of the container */
+  height: 100%;
+  width: auto;
+  flex: 1; /* evenly distribute columns in each container */
+}
+
 .square {
   border: 2px solid red;
   background-color: orange;
-  width: 25%;
-  height: 25%;
-  /* make squares fit evenly with width: 25%,
-   otherwise it overflows and you only get 3 squares per line */
-  box-sizing: border-box;
+  flex: 1; /* evenly distribute squares in column */
 }
