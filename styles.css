@@ -1,0 +1,23 @@
+body {
+  background-color: slategray;
+}
+
+#grid-container {
+  display: flex;
+  border: 2px solid blue;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 8px;
+  width: 516px;
+  height: 516px;
+}
+
+.square {
+  background-color: orange;
+  border: 2px solid red;
+  width: 25%;
+  height: 25%;
+  /* make squares fit evenly with width: 25%,
+   otherwise it overflows and you only get 3 squares per line */
+  box-sizing: border-box;
+}
