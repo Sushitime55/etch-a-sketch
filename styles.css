@@ -1,20 +1,25 @@
 body {
   background-color: slategray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 #grid-container {
-  display: flex;
   border: 2px solid blue;
+  display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: flex-start; /* remove gaps after wrapping */
   padding: 8px;
   width: 516px;
   height: 516px;
 }
 
 .square {
-  background-color: orange;
   border: 2px solid red;
+  background-color: orange;
   width: 25%;
   height: 25%;
   /* make squares fit evenly with width: 25%,
