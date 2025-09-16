@@ -37,7 +37,7 @@ function onHover(square) {
 }
 
 function makeCustomGrid() {
-  let squaresPerColumn = prompt("How many squares would you like on each column? ex. 5 = 5x5 grid");
+  let squaresPerColumn = prompt("How many squares would you like on each column? Max 100.");
 
   while (
     squaresPerColumn != null &&
@@ -45,7 +45,7 @@ function makeCustomGrid() {
       parseInt(squaresPerColumn) < 1 ||
       parseInt(squaresPerColumn) > 100)
   ) {
-    squaresPerColumn = prompt("Invalid answer. Please input an integer between 1 and 100");
+    squaresPerColumn = prompt("Invalid answer. Please input an integer between 1 and 100.");
   }
 
   if (squaresPerColumn != null) {
